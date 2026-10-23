@@ -1,22 +1,3 @@
-# AutoEvent_LabAPI — Narin4ik fork
-
-Fork of [MedveMarci/AutoEvent](https://github.com/MedveMarci/AutoEvent), with periodic
-Yes/No voting every fourth round, repeat-free automatic minigames, a **65% continuation
-vote after each game**, and a mandatory final **Nuke Run → round restart**. Jail is
-always excluded from the periodic chain. SCPStats is disabled for the entire chain
-and restored in the next lobby. This feature is part of `AutoEvent.dll`.
-
-See [automatic events: installation, configuration and commands](Docs/AutomaticEvents.md).
-Background music repeats at its original tempo until stopped; see [music playback](Docs/Music.md).
-Requires a working server-console `scpstats disable/enable` command. The optional
-continuous AutoRun module uses `ev loop start|stop|status` in this fork; `ev auto`
-controls the periodic voting system. Use the matching optional DLLs from this fork.
-
-Builds and deterministic controller tests are available in
-[Actions](https://github.com/Narin4ik/AutoEvent_LabAPI/actions). Live server gameplay
-has not been tested. The upstream project's documentation and credits follow below.
-
----
 # AutoEvent
 
 [![Version](https://img.shields.io/github/v/release/MedveMarci/AutoEvent?&label=Version&color=d500ff)](https://github.com/MedveMarci/AutoEvent/releases/latest) [![LabAPI Version](https://img.shields.io/badge/LabAPI_Version-1.1.7-b84ee87)](https://github.com/northwood-studios/LabAPI/releases/tag/1.1.7) [![SCP:SL Version](https://img.shields.io/badge/SCP:SL_Version-14.2.8-blue?&color=e5b200)](https://store.steampowered.com/app/700330/SCP_Secret_Laboratory/) [![Total Downloads](https://img.shields.io/github/downloads/MedveMarci/AutoEvent/total.svg?label=Total%20Downloads&color=ffbf00)]()
