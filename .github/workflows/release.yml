@@ -27,6 +27,9 @@ jobs:
       - name: Test automatic event rules and controller
         run: dotnet run --project Tests/AutoEvent.Automatic.Tests.csproj -c Release
 
+      - name: Test original audio tempo and native looping
+        run: dotnet run --project Tests.Audio/AutoEvent.Audio.Tests.csproj -c Release
+
       - name: Download SCP:SL references
         id: references
         uses: Axwabo/scpsl-references-downloader@v1

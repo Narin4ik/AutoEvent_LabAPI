@@ -84,14 +84,20 @@ namespace AutoEvent.Interfaces
                                                                                $"{(!checkIfAutomatic ? "true" : "false")}, " +
                                                                                $"{(s.SoundInfo.StartAutomatically ? "true" : "false")}" : "false")}");
             if (this is IEventSound sound && !string.IsNullOrEmpty(sound.SoundInfo.SoundName) && (!checkIfAutomatic || sound.SoundInfo.StartAutomatically))
+            {
+                sound.SoundInfo.AudioPlayer?.StopAudio();
                 sound.SoundInfo.AudioPlayer = Extensions.PlayAudio(sound.SoundInfo.SoundName, sound.SoundInfo.Loop);
+            }
         }
 
         protected void StopAudio()
         {
             LogManager.Debug("Stopping Audio");
             if (this is IEventSound sound && !string.IsNullOrEmpty(sound.SoundInfo.SoundName) && sound.SoundInfo.AudioPlayer != null)
+            {
                 sound.SoundInfo.AudioPlayer.StopAudio();
+                sound.SoundInfo.AudioPlayer = null;
+            }
         }
 
         protected void SpawnMap(bool checkIfAutomatic = false)

@@ -43,7 +43,7 @@ public class Plugin : Event<Config, Translation>, IEventSound, IEventMap
     public SoundInfo SoundInfo { get; set; } = new()
     {
         SoundName = "Survival.ogg",
-        Loop = false
+        Loop = true
     };
 
     protected override void RegisterEvents()
@@ -87,6 +87,8 @@ public class Plugin : Event<Config, Translation>, IEventSound, IEventMap
 
     protected override void CountdownFinished()
     {
+        StopAudio();
+        _zombieAudio?.StopAudio();
         _zombieAudio = Extensions.PlayAudio("Zombie2.ogg", true);
 
         List<Player> players = Config.Zombies.GetPlayers();
@@ -159,5 +161,8 @@ public class Plugin : Event<Config, Translation>, IEventSound, IEventMap
     }
 
     protected override void OnCleanup()
-    { }
+    {
+        _zombieAudio?.StopAudio();
+        _zombieAudio = null;
+    }
 }

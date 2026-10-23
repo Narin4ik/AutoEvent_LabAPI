@@ -1,5 +1,21 @@
 # Changelog
 
+## [10.3.2] Narin4ik LabAPI fork
+
+- Loop every built-in background track at its original tempo, including Nuke Run,
+  Lava, Battle, Counter-Strike, Musical Chairs, Race and Zombie Survival.
+- Use one native decoding, looping and sample-rate conversion path for disk and embedded audio.
+- Preserve gameplay pause/resume and one-shot effects. Stop replaced/cleaned-up audio,
+  release streams immediately, and destroy each player once without also pooling it.
+- Stop Zombie Survival's intro before its main theme and clean up that theme on manual stop.
+- Add real WAV/OGG duration, pitch and three-cycle waveform tests, plus audio adapter lifecycle tests.
+
+## [10.3.1] Narin4ik LabAPI fork
+
+- Periodic Yes/No voting, 65% continuation votes, no repeated games or Jail,
+  final Nuke Run followed by a round restart, and SCPStats control.
+- Move the optional continuous AutoRun commands to `ev loop`.
+
 ## [10.3.0]
 
 ### Added

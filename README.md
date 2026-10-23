@@ -7,6 +7,7 @@ always excluded from the periodic chain. SCPStats is disabled for the entire cha
 and restored in the next lobby. This feature is part of `AutoEvent.dll`.
 
 See [automatic events: installation, configuration and commands](Docs/AutomaticEvents.md).
+Background music repeats at its original tempo until stopped; see [music playback](Docs/Music.md).
 Requires a working server-console `scpstats disable/enable` command. The optional
 continuous AutoRun module uses `ev loop start|stop|status` in this fork; `ev auto`
 controls the periodic voting system. Use the matching optional DLLs from this fork.

@@ -44,7 +44,7 @@ public class Plugin : Event<Config, Translation>, IEventSound, IEventMap
     public SoundInfo SoundInfo { get; set; } = new()
     {
         SoundName = "MusicalChairs.ogg",
-        Loop = false
+        Loop = true
     };
 
     protected override void RegisterEvents()

@@ -13,6 +13,7 @@ namespace AutoEvent
     }
     public sealed class AutoEvent
     {
+        public static float MusicVolume = 100;
         public static AutoEvent Singleton;
         public Config Config { get; } = new();
         internal AutoVotingSystem VotingSystem { get; set; }
@@ -107,6 +108,8 @@ namespace LabApi.Features.Wrappers
     }
     public sealed class Player
     {
+        public uint NetworkId { get; set; }
+        public UnityEngine.Vector3 Position { get; set; }
         public static List<Player> ReadyList = [];
         public bool IsReady { get; set; } = true;
         public bool IsHost { get; set; }
@@ -178,6 +181,7 @@ namespace GameCore { public static class Console { public static CommandSystem.F
 public static class ServerConsole { public static CommandSystem.ICommandSender Scs; }
 namespace UnityEngine
 {
+    public readonly struct Vector3 { }
     public static class Time { public static double realtimeSinceStartupAsDouble; }
     public static class Random { public static int Range(int min, int max) => min; }
 }

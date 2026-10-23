@@ -44,7 +44,7 @@ public class Plugin : Event<Config, Translation>, IEventMap, IEventSound
     public SoundInfo SoundInfo { get; set; } = new()
     {
         SoundName = "Survival.ogg",
-        Loop = false
+        Loop = true
     };
 
     protected override void RegisterEvents()

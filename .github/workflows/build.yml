@@ -21,6 +21,8 @@ jobs:
           dotnet-version: 10.0.x
       - name: Voting rules and controller lifecycle simulation
         run: dotnet run --project Tests/AutoEvent.Automatic.Tests.csproj -c Release
+      - name: Audio decoding, original tempo and native looping
+        run: dotnet run --project Tests.Audio/AutoEvent.Audio.Tests.csproj -c Release
 
   build:
     runs-on: ubuntu-latest

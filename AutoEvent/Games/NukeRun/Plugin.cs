@@ -30,7 +30,7 @@ public class Plugin : Event<Config, Translation>, IEventSound
     public SoundInfo SoundInfo { get; set; } = new()
     {
         SoundName = "Escape.ogg",
-        Loop = false
+        Loop = true
     };
 
     protected override void RegisterEvents()

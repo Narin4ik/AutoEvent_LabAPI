@@ -11,5 +11,7 @@
     <Compile Include="../AutoEvent/Automatic/AutoVotingConfig.cs" Link="AutoVotingConfig.cs" />
     <Compile Include="../AutoEvent/Automatic/AutoVotingSystem.cs" Link="AutoVotingSystem.cs" />
     <Compile Include="../AutoEvent/API/AutomaticEvents.cs" Link="AutomaticEvents.cs" />
+    <Compile Include="../AutoEvent/API/IAudioHandle.cs" Link="IAudioHandle.cs" />
+    <Compile Include="../AutoEvent/Integrations/Audio/SlNaExtensions.cs" Link="SlNaExtensions.cs" />
   </ItemGroup>
 </Project>

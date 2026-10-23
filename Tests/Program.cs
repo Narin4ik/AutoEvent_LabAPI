@@ -125,4 +125,5 @@ Check(lease.Restore() && !lease.NeedsRestore, "Next lobby/unload retries enable"
 Check(lease.Restore() && commands.Count == 4, "Successful enable is sent once");
 
 RuntimeChecks.Run(Check);
-Console.WriteLine($"Passed {checks} automatic event checks (rules, lifecycle simulation, SCPStats).");
+AudioPlaybackChecks.Run(Check);
+Console.WriteLine($"Passed {checks} controller checks (voting, lifecycle, SCPStats, audio adapter).");

@@ -3,6 +3,7 @@ using System.IO;
 using AutoEvent.API;
 using AutoEvent.ApiFeatures;
 using AutoEvent.Automatic;
+using AutoEvent.Integrations.Audio;
 using AutoEvent.Integrations.MapEditor;
 using AutoEvent.Loader;
 using GameCore;
@@ -35,7 +36,7 @@ public class AutoEvent : Plugin<Config>
     public override string Description =>
         "A plugin that allows you to play mini-games in SCP:SL. It includes a variety of games such as Spleef, Lava, Hide and Seek, Knives, and more. Each game has its own unique mechanics and rules, providing a fun and engaging experience for players.";
 
-    public override Version Version => new(10, 3, 1);
+    public override Version Version => new(10, 3, 2);
 
     public override Version RequiredApiVersion => new(LabApiProperties.CompiledVersion);
 
@@ -131,6 +132,7 @@ public class AutoEvent : Plugin<Config>
         VotingSystem = null;
         try { InternalEventManager?.CurrentEvent?.Shutdown(); }
         catch (Exception e) { LogManager.Error($"Could not fully clean up the active event during unload: {e}"); }
+        SlNaExtensions.StopAll();
         _harmonyPatch?.UnpatchAll(_harmonyPatch.Id);
         _harmonyPatch = null;
         InternalEventManager = null;
