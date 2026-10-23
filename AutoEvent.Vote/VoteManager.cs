@@ -30,6 +30,7 @@ public static class VoteManager
     {
         if (IsRunning || events is not { Count: > 0 })
             return false;
+        if (!AutomaticEvents.TryBeginExternalActivity()) return false;
 
         IsRunning = true;
         try

@@ -159,7 +159,7 @@ internal class EventHandler : CustomEventsHandler
 
     public override void OnServerWaveRespawning(WaveRespawningEventArgs ev)
     {
-        if (AutoEvent.InternalEventManager.CurrentEvent is not null)
+        if (AutoEvent.InternalEventManager.CurrentEvent is not null || AutomaticEvents.IsChainActive)
             ev.IsAllowed = false;
         base.OnServerWaveRespawning(ev);
     }

@@ -137,6 +137,12 @@ internal class Run : ICommand, IUsageProvider
             }
         }
 
+        if (!AutomaticEvents.TryBeginExternalActivity())
+        {
+            response = "An automatic event chain is active. Use ev auto off and wait for cleanup first.";
+            return false;
+        }
+
         Round.IsLocked = true;
         if (!Round.IsRoundStarted)
         {

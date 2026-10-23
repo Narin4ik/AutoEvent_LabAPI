@@ -1,3 +1,21 @@
+# AutoEvent_LabAPI — Narin4ik fork
+
+Fork of [MedveMarci/AutoEvent](https://github.com/MedveMarci/AutoEvent), with periodic
+Yes/No voting every fourth round, repeat-free automatic minigames, a **65% continuation
+vote after each game**, and a mandatory final **Nuke Run → round restart**. Jail is
+always excluded from the periodic chain. SCPStats is disabled for the entire chain
+and restored in the next lobby. This feature is part of `AutoEvent.dll`.
+
+See [automatic events: installation, configuration and commands](Docs/AutomaticEvents.md).
+Requires a working server-console `scpstats disable/enable` command. The optional
+continuous AutoRun module uses `ev loop start|stop|status` in this fork; `ev auto`
+controls the periodic voting system. Use the matching optional DLLs from this fork.
+
+Builds and deterministic controller tests are available in
+[Actions](https://github.com/Narin4ik/AutoEvent_LabAPI/actions). Live server gameplay
+has not been tested. The upstream project's documentation and credits follow below.
+
+---
 # AutoEvent
 
 [![Version](https://img.shields.io/github/v/release/MedveMarci/AutoEvent?&label=Version&color=d500ff)](https://github.com/MedveMarci/AutoEvent/releases/latest) [![LabAPI Version](https://img.shields.io/badge/LabAPI_Version-1.1.7-b84ee87)](https://github.com/northwood-studios/LabAPI/releases/tag/1.1.7) [![SCP:SL Version](https://img.shields.io/badge/SCP:SL_Version-14.2.8-blue?&color=e5b200)](https://store.steampowered.com/app/700330/SCP_Secret_Laboratory/) [![Total Downloads](https://img.shields.io/github/downloads/MedveMarci/AutoEvent/total.svg?label=Total%20Downloads&color=ffbf00)]()
@@ -15,19 +33,19 @@ mini-games**.
 
 ## Guides
 
-[![Mini-Games](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message.png)](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/MiniGames.md)
-[![Installation](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message1.png)](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/Installation.md)
-[![Commands](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message2.png)](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/Commands.md)
-[![Language](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message3.png)](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/Language.md)
-[![Problems](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message4.png)](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/Problem.md)
-[![Plugin API](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message5.png)](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/PluginApi.md)
-[![Configuration](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message6.png)](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/Configuration.md)
+[![Mini-Games](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message.png)](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/MiniGames.md)
+[![Installation](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message1.png)](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/Installation.md)
+[![Commands](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message2.png)](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/Commands.md)
+[![Language](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message3.png)](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/Language.md)
+[![Problems](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message4.png)](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/Problem.md)
+[![Plugin API](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message5.png)](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/PluginApi.md)
+[![Configuration](https://github.com/MedveMarci/AutoEvent/blob/main/Photos/Message6.png)](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/Configuration.md)
 
 **Optional Modules:**
 
-- [AutoEvent.AutoRun](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/AutoRun.md) — automatically runs mini-games
+- [AutoEvent.AutoRun](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/AutoRun.md) — automatically runs mini-games
   one after another
-- [AutoEvent.Vote](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/Vote.md) — voting system for choosing
+- [AutoEvent.Vote](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/Vote.md) — voting system for choosing
   mini-games
 
 <a href='https://discord.gg/KmpA8cfaSA'><img src='https://www.allkpop.com/upload/2021/01/content/262046/1611711962-discord-button.png' height="100"></a>
@@ -112,7 +130,7 @@ The release only contains the AutoEvent DLLs. Download the dependencies from the
 8. Run `ev update` in the admin console to download the schematics.
 9. Run `ev list` to verify all mini-games are loaded.
 
-See the full [Installation Guide](https://github.com/MedveMarci/AutoEvent/blob/main/Docs/Installation.md) for details.
+See the full [Installation Guide](https://github.com/Narin4ik/AutoEvent_LabAPI/blob/main/Docs/Installation.md) for details.
 
 ---
 

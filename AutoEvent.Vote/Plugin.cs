@@ -23,7 +23,7 @@ public class AutoEventVote : Plugin<Config>
 
     public override string Author => "MedveMarci";
 
-    public override Version Version { get; } = new(2, 0, 0);
+    public override Version Version { get; } = new(2, 0, 1);
 
     public override Version RequiredApiVersion { get; } = new(LabApiProperties.CompiledVersion);
 
@@ -95,6 +95,7 @@ public class AutoEventVote : Plugin<Config>
         ServerEvents.RoundRestarted += OnRoundRestarted;
         ServerEvents.WaitingForPlayers += OnWaitingForPlayers;
         LanguageManager.LanguageChanged += OnLanguageChanged;
+        AutomaticEvents.ExternalActivityRunning += IsVoteRunning;
         _enabled = true;
     }
 
@@ -102,6 +103,8 @@ public class AutoEventVote : Plugin<Config>
     {
         if (_enabled)
         {
+            AutomaticEvents.ExternalActivityRunning -= IsVoteRunning;
+            VoteManager.Abort();
             ServerEvents.RoundRestarted -= OnRoundRestarted;
             ServerEvents.WaitingForPlayers -= OnWaitingForPlayers;
             LanguageManager.LanguageChanged -= OnLanguageChanged;
@@ -110,4 +113,6 @@ public class AutoEventVote : Plugin<Config>
 
         Singleton = null;
     }
+
+    private static bool IsVoteRunning() => VoteManager.IsRunning;
 }

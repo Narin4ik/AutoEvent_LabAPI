@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../AutoEvent/Automatic/AutoVotingSession.cs" Link="AutoVotingSession.cs" />
+    <Compile Include="../AutoEvent/Automatic/ScpStatsLease.cs" Link="ScpStatsLease.cs" />
+    <Compile Include="../AutoEvent/Automatic/AutoVotingConfig.cs" Link="AutoVotingConfig.cs" />
+    <Compile Include="../AutoEvent/Automatic/AutoVotingSystem.cs" Link="AutoVotingSystem.cs" />
+    <Compile Include="../AutoEvent/API/AutomaticEvents.cs" Link="AutomaticEvents.cs" />
+  </ItemGroup>
+</Project>

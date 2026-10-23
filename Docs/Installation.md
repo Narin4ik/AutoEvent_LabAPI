@@ -1,5 +1,8 @@
 # Installation
 
+For this fork, use its DLLs and follow [periodic automatic events and SCPStats setup](AutomaticEvents.md).
+When installing optional AutoRun/Vote modules, use their matching builds from this fork.
+
 ## Requirements
 
 - [Harmony](https://github.com/pardeike/Harmony) — required for the plugin (`0Harmony.dll`)

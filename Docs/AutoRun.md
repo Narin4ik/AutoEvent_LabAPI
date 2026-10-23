@@ -37,20 +37,20 @@ owner:
 
 ## Commands
 
-All AutoRun commands are subcommands under `ev auto`.
+All AutoRun commands are subcommands under `ev loop`.
 
 | Command          | Aliases       | Description                                                          |
 |------------------|---------------|----------------------------------------------------------------------|
-| `ev auto start`  | `begin`, `on` | Starts the automatic mini-game loop                                  |
-| `ev auto stop`   | `end`, `off`  | Stops the loop (and the current mini-game, if one is running)        |
-| `ev auto status` | `info`        | Shows loop state, current mini-game, selection mode, pool and voting |
+| `ev loop start`  | `begin`, `on` | Starts the automatic mini-game loop                                  |
+| `ev loop stop`   | `end`, `off`  | Stops the loop (and the current mini-game, if one is running)        |
+| `ev loop status` | `info`        | Shows loop state, current mini-game, selection mode, pool and voting |
 
 **Example:**
 
 ```
-ev auto start
-ev auto status
-ev auto stop
+ev loop start
+ev loop status
+ev loop stop
 ```
 
 **Notes:**

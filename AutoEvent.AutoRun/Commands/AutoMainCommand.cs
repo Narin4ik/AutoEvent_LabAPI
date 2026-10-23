@@ -7,7 +7,7 @@ namespace AutoEvent.AutoRun.Commands;
 [CommandHandler(typeof(MainCommand))]
 public class AutoMainCommand : ParentCommand
 {
-    public override string Command => "Auto";
+    public override string Command => "Loop";
 
     public override string Description => "Automatic minigame loop commands for AutoEvent";
 
@@ -30,7 +30,7 @@ public class AutoMainCommand : ParentCommand
             return false;
         }
 
-        response = CommandHelp.BuildGroup(this, "ev auto", sender);
+        response = CommandHelp.BuildGroup(this, "ev loop", sender);
         return true;
     }
 }

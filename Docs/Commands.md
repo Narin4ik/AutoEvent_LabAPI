@@ -4,6 +4,11 @@ All AutoEvent commands use the `ev` prefix and are entered in the **Remote Admin
 
 ---
 
+## Periodic automatic events
+
+Use `ev auto status|reset|on|off` (permission `ev.auto`); see [Automatic Events](AutomaticEvents.md).
+The optional continuous AutoRun module uses `ev loop start|stop|status` in this fork.
+
 ## Command Reference
 
 | Command                                       | Description                                                              |

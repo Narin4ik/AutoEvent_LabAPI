@@ -1,4 +1,5 @@
 using System;
+using AutoEvent.API;
 using CommandSystem;
 using LabApi.Features.Permissions;
 
@@ -39,6 +40,11 @@ public class AutoStart : ICommand
             return false;
         }
 
+        if (!AutomaticEvents.TryBeginExternalActivity())
+        {
+            response = "An automatic event chain is active; use ev auto off and wait for cleanup.";
+            return false;
+        }
         AutoRunManager.Start();
         response = "The automatic minigame loop has been started.";
         return true;

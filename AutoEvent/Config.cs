@@ -3,11 +3,15 @@ using System.ComponentModel;
 using System.IO;
 using LabApi.Loader.Features.Paths;
 using PlayerRoles;
+using AutoEvent.Automatic;
 
 namespace AutoEvent;
 
 public class Config
 {
+    [Description("Периодические авто-ивенты и голосования о продолжении.")]
+    public AutoVotingConfig AutoVoting { get; set; } = new();
+
     [Description("Enable/Disable Debug.")] public bool Debug { get; set; } = false;
 
     [Description("Enable/Disable the CreditTag system. We're working free on the plugins so please don't turn this off, we deserve this! :)")]

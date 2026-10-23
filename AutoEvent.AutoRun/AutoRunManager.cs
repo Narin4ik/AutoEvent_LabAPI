@@ -45,6 +45,8 @@ public static class AutoRunManager
     public static void Start()
     {
         if (Enabled) return;
+        if (!AutomaticEvents.TryBeginExternalActivity())
+            throw new InvalidOperationException("An automatic event chain is active; use ev auto off and wait for cleanup.");
         Enabled = true;
         Bag.Clear();
         _sequentialIndex = 0;
@@ -353,6 +355,7 @@ public static class AutoRunManager
     private static bool TryStart(Event ev)
     {
         if (ev is null) return false;
+        if (AutomaticEvents.IsChainActive) return false;
 
         if (IsEventRunning)
         {

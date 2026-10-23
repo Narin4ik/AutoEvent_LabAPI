@@ -21,7 +21,7 @@ public class AutoEventAutoRun : Plugin<Config>
 
     public override string Author => "MedveMarci";
 
-    public override Version Version { get; } = new(1, 0, 0);
+    public override Version Version { get; } = new(1, 0, 1);
 
     public override Version RequiredApiVersion { get; } = new(LabApiProperties.CompiledVersion);
 
@@ -65,6 +65,7 @@ public class AutoEventAutoRun : Plugin<Config>
         }
 
         AutoRunManager.SetServerListLobby();
+        AutomaticEvents.ExternalActivityRunning += IsLoopRunning;
         _eventHandler = new EventHandler();
         CustomHandlersManager.RegisterEventsHandler(_eventHandler);
         LanguageManager.LanguageChanged += OnLanguageChanged;
@@ -73,6 +74,7 @@ public class AutoEventAutoRun : Plugin<Config>
 
     public override void Disable()
     {
+        AutomaticEvents.ExternalActivityRunning -= IsLoopRunning;
         AutoRunManager.Stop(false);
 
         if (_eventHandler != null)
@@ -85,4 +87,6 @@ public class AutoEventAutoRun : Plugin<Config>
 
         Singleton = null;
     }
+
+    private static bool IsLoopRunning() => AutoRunManager.Enabled;
 }

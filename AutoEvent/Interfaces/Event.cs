@@ -120,6 +120,8 @@ namespace AutoEvent.Interfaces
 
         public void StartEvent(string mapName = "")
         {
+            if (AutoEvent.Singleton?.VotingSystem?.AllowEventStart(this) == false)
+                throw new InvalidOperationException("An automatic event chain owns this round.");
             LogManager.Debug($"Starting Event {Name}");
             OnInternalStart(mapName);
         }
@@ -128,6 +130,17 @@ namespace AutoEvent.Interfaces
         {
             LogManager.Debug($"Stopping Event {Name}");
             OnInternalStop();
+        }
+
+        // Plugin unload cannot leave cleanup waiting on a manager that is about to be removed.
+        internal void Shutdown()
+        {
+            try { OnInternalStop(); }
+            finally
+            {
+                Timing.KillCoroutines(_timingCoroutine, BroadcastCoroutine, GameCoroutine, _cleanupHandle);
+                OnInternalCleanup();
+            }
         }
 
         protected abstract void OnStart();
@@ -288,6 +301,7 @@ namespace AutoEvent.Interfaces
             {
                 LogManager.Error($"Caught an exception at Event.OnStart().\n{e}");
                 StopEvent();
+                return;
             }
 
             EventStarted?.Invoke(Name);
